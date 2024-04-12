@@ -26,6 +26,7 @@ export const views: Record<
   exception_403: () => import('./exception/403/index.vue'),
   exception_404: () => import('./exception/404/index.vue'),
   exception_500: () => import('./exception/500/index.vue'),
+  front_page: () => import('./front/page/index.vue'),
   'function_tab-detail': () => import('./function/tab-detail/index.vue'),
   'function_tab-multi-detail': () => import('./function/tab-multi-detail/index.vue'),
   function_tab: () => import('./function/tab/index.vue'),
@@ -46,6 +47,5 @@ export const views: Record<
   plugin_map: () => import('./plugin/map/index.vue'),
   plugin_print: () => import('./plugin/print/index.vue'),
   plugin_swiper: () => import('./plugin/swiper/index.vue'),
-  plugin_video: () => import('./plugin/video/index.vue'),
-  front_page: () => import('./front/page/index.vue')
+  plugin_video: () => import('./plugin/video/index.vue')
 };

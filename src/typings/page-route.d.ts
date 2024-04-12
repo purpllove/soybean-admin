@@ -43,6 +43,8 @@ declare namespace PageRoute {
     | 'exception_403'
     | 'exception_404'
     | 'exception_500'
+    | 'front'
+    | 'front_page'
     | 'function'
     | 'function_tab-detail'
     | 'function_tab-multi-detail'
@@ -71,9 +73,7 @@ declare namespace PageRoute {
     | 'plugin_map'
     | 'plugin_print'
     | 'plugin_swiper'
-    | 'plugin_video'
-    | 'front'
-    | 'front_page';
+    | 'plugin_video';
 
   /**
    * last degree route key, which has the page file
@@ -103,6 +103,7 @@ declare namespace PageRoute {
     | 'exception_403'
     | 'exception_404'
     | 'exception_500'
+    | 'front_page'
     | 'function_tab-detail'
     | 'function_tab-multi-detail'
     | 'function_tab'
@@ -124,7 +125,5 @@ declare namespace PageRoute {
     | 'plugin_print'
     | 'plugin_swiper'
     | 'plugin_video'
-    | 'front'
-    | 'front_page'
   >;
 }
