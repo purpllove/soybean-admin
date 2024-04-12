@@ -88,6 +88,10 @@ const locale: I18nType.Schema = {
       route: 'Route',
       user: 'User'
     },
+    front: {
+      _value: 'Front',
+      page: 'page'
+    },
     about: 'About'
   },
   layout: {

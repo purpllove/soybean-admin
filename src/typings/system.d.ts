@@ -396,6 +396,10 @@ declare namespace I18nType {
         route: string;
         user: string;
       };
+      front: {
+        _value: string;
+        page: string;
+      };
       about: string;
     };
     layout: {

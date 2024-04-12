@@ -88,6 +88,10 @@ const locale: I18nType.Schema = {
       route: '路由管理',
       user: '用户管理'
     },
+    front: {
+      _value: 'Front',
+      page: '网页'
+    },
     about: '关于'
   },
   layout: {

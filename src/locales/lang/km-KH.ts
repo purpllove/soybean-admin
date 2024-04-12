@@ -88,6 +88,10 @@ const locale: I18nType.Schema = {
       route: 'ផ្លូវប្រព័ន្ធ',
       user: 'អ្នកប្រើប្រាស់'
     },
+    front: {
+      _value: 'Front',
+      page: 'page'
+    },
     about: 'អំពីប្រព័ន្ធ'
   },
   layout: {

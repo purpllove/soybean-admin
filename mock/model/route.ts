@@ -566,6 +566,20 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
         icon: 'fluent:book-information-24-regular',
         order: 10
       }
+    },
+    {
+      name: 'front',
+      path: '/front',
+      component: 'self',
+      meta: {
+        title: '网页',
+        i18nTitle: 'routes.front._value',
+        requiresAuth: true,
+        keepAlive: true,
+        singleLayout: 'basic',
+        icon: 'fluent:book-information-24-regular',
+        order: 10
+      }
     }
   ],
   admin: [
