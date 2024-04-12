@@ -7,7 +7,8 @@ const apis: MockMethod[] = [
     method: 'post',
     response: (): Service.MockServiceResult<ApiUserManagement.User[]> => {
       const data = mock({
-        'list|1000': [
+        // 'list|1000': [
+        'list|2': [
           {
             id: '@id',
             userName: '@cname',

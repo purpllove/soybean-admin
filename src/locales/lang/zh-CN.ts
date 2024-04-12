@@ -40,7 +40,8 @@ const locale: I18nType.Schema = {
       charts: {
         _value: '图表',
         echarts: 'ECharts',
-        antv: 'AntV'
+        antv: 'AntV',
+        rend: '租房'
       },
       copy: '剪贴板',
       editor: {

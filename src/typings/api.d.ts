@@ -50,3 +50,11 @@ declare namespace ApiUserManagement {
     userStatus: '1' | '2' | '3' | '4' | null;
   }
 }
+
+declare namespace ApiChartManagement {
+  interface Rend {
+    name: string | null;
+    date: string | null;
+    list: number[] | null;
+  }
+}

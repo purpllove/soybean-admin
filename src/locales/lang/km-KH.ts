@@ -40,7 +40,8 @@ const locale: I18nType.Schema = {
       charts: {
         _value: 'តារាង​ Chart',
         echarts: 'តារាង ECharts',
-        antv: 'AntV'
+        antv: 'AntV',
+        rend: 'Rend'
       },
       copy: 'ចម្លង',
       editor: {

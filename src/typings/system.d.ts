@@ -349,6 +349,7 @@ declare namespace I18nType {
           _value: string;
           antv: string;
           echarts: string;
+          rend: string;
         };
         copy: string;
         editor: {

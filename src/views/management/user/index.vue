@@ -4,15 +4,15 @@
       <div class="flex-col h-full">
         <n-space class="pb-12px" justify="space-between">
           <n-space>
-            <n-button type="primary" @click="handleAddTable">
+            <n-button type="primary" round @click="handleAddTable">
               <icon-ic-round-plus class="mr-4px text-20px" />
               新增
             </n-button>
-            <n-button type="error">
+            <n-button type="error" round>
               <icon-ic-round-delete class="mr-4px text-20px" />
               删除
             </n-button>
-            <n-button type="success">
+            <n-button type="success" round>
               <icon-uil:export class="mr-4px text-20px" />
               导出Excel
             </n-button>
@@ -45,7 +45,7 @@ import type { Ref } from 'vue';
 import { NButton, NPopconfirm, NSpace, NTag } from 'naive-ui';
 import type { DataTableColumns, PaginationProps } from 'naive-ui';
 import { genderLabels, userStatusLabels } from '@/constants';
-import { fetchUserList } from '@/service';
+import { fetchUserList, deleteUser } from '@/service';
 import { useBoolean, useLoading } from '@/hooks';
 import TableActionModal from './components/table-action-modal.vue';
 import type { ModalType } from './components/table-action-modal.vue';
@@ -65,6 +65,8 @@ async function getTableData() {
   if (data) {
     setTimeout(() => {
       setTableData(data);
+      // onChange(data.current);
+      // onUpdatePageSize(data.size);
       endLoading();
     }, 1000);
   }
@@ -184,6 +186,7 @@ function handleEditTable(rowId: string) {
 }
 
 function handleDeleteTable(rowId: string) {
+  deleteUser(rowId);
   window.$message?.info(`点击了删除，rowId为${rowId}`);
 }
 

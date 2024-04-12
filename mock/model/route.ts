@@ -180,6 +180,17 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
                 requiresAuth: true,
                 icon: 'simple-icons:antdesign'
               }
+            },
+            {
+              name: 'plugin_charts_rend',
+              path: '/plugin/charts/rend',
+              component: 'self',
+              meta: {
+                title: 'Rend',
+                i18nTitle: 'routes.plugin.charts.rend',
+                requiresAuth: true,
+                icon: 'simple-icons:antdesign'
+              }
             }
           ],
           meta: {
@@ -735,6 +746,17 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
               meta: {
                 title: 'AntV',
                 i18nTitle: 'routes.plugin.charts.antv',
+                requiresAuth: true,
+                icon: 'simple-icons:antdesign'
+              }
+            },
+            {
+              name: 'plugin_charts_rend',
+              path: '/plugin/charts/rend',
+              component: 'self',
+              meta: {
+                title: 'Rend',
+                i18nTitle: 'routes.plugin.charts.rend',
                 requiresAuth: true,
                 icon: 'simple-icons:antdesign'
               }

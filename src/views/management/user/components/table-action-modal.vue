@@ -24,8 +24,8 @@
         </n-form-item-grid-item>
       </n-grid>
       <n-space class="w-full pt-16px" :size="24" justify="end">
-        <n-button class="w-72px" @click="closeModal">取消</n-button>
-        <n-button class="w-72px" type="primary" @click="handleSubmit">确定</n-button>
+        <n-button class="w-72px" round @click="closeModal">取消</n-button>
+        <n-button class="w-72px" type="primary" round @click="handleSubmit">确定</n-button>
       </n-space>
     </n-form>
   </n-modal>
@@ -35,6 +35,7 @@
 import { ref, computed, reactive, watch } from 'vue';
 import type { FormInst, FormItemRule } from 'naive-ui';
 import { genderOptions, userStatusOptions } from '@/constants';
+import { addUser } from '@/service';
 import { formRules, createRequiredFormRule } from '@/utils';
 
 export interface Props {
@@ -132,7 +133,8 @@ function handleUpdateFormModelByModalType() {
 }
 
 async function handleSubmit() {
-  await formRef.value?.validate();
+  // await formRef.value?.validate();
+  await addUser(formModel, props.type === 'add');
   window.$message?.success('新增成功!');
   closeModal();
 }
