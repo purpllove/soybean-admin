@@ -58,3 +58,14 @@ declare namespace ApiChartManagement {
     list: number[] | null;
   }
 }
+
+declare namespace ApiPageManagement {
+  interface Page {
+    id: number | null;
+    name: string | null;
+    description: string | null;
+    site: string | null;
+    icon: string | null;
+    iconColor?: string | null;
+  }
+}

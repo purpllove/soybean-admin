@@ -33,3 +33,9 @@ export const getRends = async () => {
   const data = await request.post<ApiChartManagement.Rend[] | null>('/getRends');
   return data;
 };
+
+/** getPages */
+export const getPages = async () => {
+  const data = await request.post<Any[] | null>('/getPages');
+  return data;
+};
