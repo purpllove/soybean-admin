@@ -86,7 +86,8 @@ const locale: I18nType.Schema = {
       auth: 'Auth',
       role: 'សិទ្ធី',
       route: 'ផ្លូវប្រព័ន្ធ',
-      user: 'អ្នកប្រើប្រាស់'
+      user: 'អ្នកប្រើប្រាស់',
+      pageSetting: 'Page Setting'
     },
     front: {
       _value: 'Front',

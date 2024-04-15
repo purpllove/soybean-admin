@@ -50,6 +50,18 @@ const management: AuthRoute.Route = {
         keepAlive: true,
         icon: 'material-symbols:route'
       }
+    },
+    {
+      name: 'management_pageSetting',
+      path: '/management/pageSetting',
+      component: 'self',
+      meta: {
+        title: '路由管理',
+        i18nTitle: 'routes.management.pageSetting',
+        requiresAuth: true,
+        keepAlive: true,
+        icon: 'material-symbols:route'
+      }
     }
   ],
   meta: {

@@ -32,6 +32,7 @@ export const views: Record<
   function_tab: () => import('./function/tab/index.vue'),
   function_websocket: () => import('./function/websocket/index.vue'),
   management_auth: () => import('./management/auth/index.vue'),
+  management_pageSetting: () => import('./management/pageSetting/index.vue'),
   management_role: () => import('./management/role/index.vue'),
   management_route: () => import('./management/route/index.vue'),
   management_user: () => import('./management/user/index.vue'),

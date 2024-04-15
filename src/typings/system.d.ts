@@ -395,6 +395,7 @@ declare namespace I18nType {
         role: string;
         route: string;
         user: string;
+        pageSetting: string;
       };
       front: {
         _value: string;

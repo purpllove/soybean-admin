@@ -86,7 +86,8 @@ const locale: I18nType.Schema = {
       auth: '权限管理',
       role: '角色管理',
       route: '路由管理',
-      user: '用户管理'
+      user: '用户管理',
+      pageSetting: '网页管理'
     },
     front: {
       _value: 'Front',

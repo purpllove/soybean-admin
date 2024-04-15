@@ -93,38 +93,6 @@ const technology: Technology[] = [
     author: 'Posva',
     site: 'https://pinia.esm.dev/',
     icon: 'noto:pineapple'
-  },
-  {
-    id: 6,
-    name: 'PageAdmin',
-    description: 'PageAdmin 控制台',
-    author: 'Purp',
-    site: 'http://192.168.8.223:8080/wp-admin',
-    icon: 'logos:atlassian'
-  },
-  {
-    id: 7,
-    name: 'Nas',
-    description: 'Nas 存储',
-    author: 'Purp',
-    site: 'http://nas.purp.top:5000/',
-    icon: 'logos:apphub'
-  },
-  {
-    id: 8,
-    name: 'Goaccess',
-    description: 'Goaccess log',
-    author: 'Purp',
-    site: 'http://goaccess.purp.top/',
-    icon: 'logos:apiary'
-  },
-  {
-    id: 9,
-    name: '改图宝',
-    description: '改图宝',
-    author: 'Purp',
-    site: 'https://www.gaitubao.com/',
-    icon: 'logos:adobe-photoshop'
   }
 ];
 
