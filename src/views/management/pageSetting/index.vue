@@ -47,6 +47,7 @@ import type { DataTableColumns, PaginationProps } from 'naive-ui';
 import { genderLabels, userStatusLabels } from '@/constants';
 import { getPages, deletePage } from '@/service';
 import { useBoolean, useLoading } from '@/hooks';
+import SvgIcon from '@/components/custom/svg-icon.vue';
 import TableActionModal from './components/table-action-modal.vue';
 import type { ModalType } from './components/table-action-modal.vue';
 import ColumnSetting from './components/column-setting.vue';
@@ -93,7 +94,16 @@ const columns: Ref<DataTableColumns<ApiPageManagement.Page>> = ref([
   {
     key: 'icon',
     title: '图标',
-    align: 'center'
+    align: 'center',
+    width: 60,
+    render: row => {
+      const icon = row.icon;
+      return (
+        <div class="flex-center">
+          <SvgIcon icon={icon} class="text-icon" />
+        </div>
+      );
+    }
   },
   {
     key: 'actions',

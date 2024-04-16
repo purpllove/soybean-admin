@@ -51,3 +51,15 @@ export const addPage = async (user: ApiPageManagement.Page | null, update: boole
   const data = await request.post<ApiPageManagement.Page[] | null>(update ? '/addPages' : '/updatePages', user);
   return data;
 };
+
+/** get menu list */
+export const fetchGetMenuList = async () => {
+  const data = await request.get<ApiSystemManagement.Menu[] | null>('/systemManage/getMenuList');
+  return data;
+};
+
+/** get all pages */
+export const fetchGetAllPages = async () => {
+  const data = await request.get<string[] | null>('/systemManage/getAllPages');
+  return data;
+};

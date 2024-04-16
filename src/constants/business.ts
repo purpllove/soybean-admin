@@ -31,3 +31,24 @@ export const userStatusLabels: Record<UserManagement.UserStatusKey, string> = {
   4: '软删除'
 };
 export const userStatusOptions = transformObjectToOption(userStatusLabels);
+
+export const enableStatusRecord: Record<Common.EnableStatus, I18nType.I18nKey> = {
+  '1': 'page.manage.common.status.enable',
+  '2': 'page.manage.common.status.disable'
+};
+
+export const enableStatusOptions = transformObjectToOption(enableStatusRecord);
+
+export const menuTypeRecord: Record<ApiSystemManagement.MenuType, I18nType.I18nKey> = {
+  '1': 'page.manage.menu.type.directory',
+  '2': 'page.manage.menu.type.menu'
+};
+
+export const menuTypeOptions = transformObjectToOption(menuTypeRecord);
+
+export const menuIconTypeRecord: Record<ApiSystemManagement.IconType, I18nType.I18nKey> = {
+  '1': 'page.manage.menu.iconType.iconify',
+  '2': 'page.manage.menu.iconType.local'
+};
+
+export const menuIconTypeOptions = transformObjectToOption(menuIconTypeRecord);

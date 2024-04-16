@@ -69,3 +69,92 @@ declare namespace ApiPageManagement {
     iconColor?: string | null;
   }
 }
+
+declare namespace ApiSystemManagement {
+  /**
+   * menu type
+   *
+   * - "1": directory
+   * - "2": menu
+   */
+  type MenuType = '1' | '2';
+
+  type MenuButton = {
+    /**
+     * button code
+     *
+     * it can be used to control the button permission
+     */
+    code: string;
+    /** button description */
+    desc: string;
+  };
+
+  /**
+   * icon type
+   *
+   * - "1": iconify icon
+   * - "2": local icon
+   */
+  type IconType = '1' | '2';
+
+  type Menu = Common.CommonRecord<{
+    /** parent menu id */
+    parentId: number;
+    /** menu type */
+    menuType: MenuType;
+    /** menu name */
+    menuName: string | null;
+    /** route name */
+    routeName: string;
+    /** route path */
+    routePath: string;
+    /** component */
+    component?: string;
+    /**
+     * i18n key
+     *
+     * it is for internationalization
+     */
+    i18nKey?: I18nType.I18nKey;
+    /** iconify icon name or local icon name */
+    icon: string;
+    /** icon type */
+    iconType: IconType;
+    /** menu order */
+    order: number;
+    /** whether to cache the route */
+    keepAlive?: boolean;
+    /** outer link */
+    href?: string;
+    /** whether to hide the route in the menu */
+    hideInMenu?: boolean;
+    /**
+     * The menu key will be activated when entering the route
+     *
+     * The route is not in the menu
+     *
+     * @example
+     *   the route is "user_detail", if it is set to "user_list", the menu "user_list" will be activated
+     */
+    // activeMenu?: import('@elegant-router/types').LastLevelRouteKey;
+    /** By default, the same route path will use one tab, if set to true, it will use multiple tabs */
+    multiTab?: boolean;
+    /** If set, the route will be fixed in tabs, and the value is the order of fixed tabs */
+    fixedIndexInTab?: number;
+    /** menu buttons */
+    buttons?: MenuButton[];
+    /** children menu */
+    children?: Menu[];
+  }>;
+
+  /** menu list */
+  type MenuList = Common.PaginatingQueryRecord<Menu>;
+
+  type MenuTree = {
+    id: number;
+    label: string;
+    pId: number;
+    children?: MenuTree[];
+  };
+}

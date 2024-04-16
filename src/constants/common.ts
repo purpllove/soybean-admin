@@ -1,3 +1,5 @@
+import { transformObjectToOption } from './_shared';
+
 export const dataTypeLabels: { [K in TypeUtil.DataTypeStringKey]: TypeUtil.DataTypeString<K> } = {
   string: '[object String]',
   number: '[object Number]',
@@ -16,3 +18,10 @@ export const dataTypeLabels: { [K in TypeUtil.DataTypeStringKey]: TypeUtil.DataT
   map: '[object Map]',
   file: '[object File]'
 };
+
+export const yesOrNoRecord: Record<Common.YesOrNo, I18nType.I18nKey> = {
+  Y: 'common.yesOrNo.yes',
+  N: 'common.yesOrNo.no'
+};
+
+export const yesOrNoOptions = transformObjectToOption(yesOrNoRecord);
