@@ -111,10 +111,13 @@ export const useRouteStore = defineStore('route-store', {
       const { resetAuthStore } = useAuthStore();
       const { initHomeTab } = useTabStore();
 
+      // const { userId } = localStg.get('userInfo') || {};
       const { userId } = localStg.get('userInfo') || {};
 
       if (!userId) {
+        localStg.clear();
         throw new Error('userId 不能为空!');
+        // return;
       }
 
       const { error, data } = await fetchUserRoutes(userId);

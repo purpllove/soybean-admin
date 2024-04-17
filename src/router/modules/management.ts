@@ -56,7 +56,7 @@ const management: AuthRoute.Route = {
       path: '/management/pageSetting',
       component: 'self',
       meta: {
-        title: '路由管理',
+        title: '网页管理',
         i18nTitle: 'routes.management.pageSetting',
         requiresAuth: true,
         keepAlive: true,

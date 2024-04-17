@@ -544,6 +544,18 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
             requiresAuth: true,
             icon: 'material-symbols:route'
           }
+        },
+        {
+          name: 'management_pageSetting',
+          path: '/management/pageSetting',
+          component: 'self',
+          meta: {
+            title: '网页管理',
+            i18nTitle: 'routes.management.pageSetting',
+            requiresAuth: true,
+            keepAlive: true,
+            icon: 'material-symbols:route'
+          }
         }
       ],
       meta: {
@@ -570,13 +582,22 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
     {
       name: 'front',
       path: '/front',
-      component: 'self',
+      component: 'basic',
+      children: [
+        {
+          name: 'front_page',
+          path: '/front/page',
+          component: 'self',
+          meta: {
+            title: '图表',
+            i18nTitle: 'routes.front.page',
+            icon: 'mdi:chart-areaspline'
+          }
+        }
+      ],
       meta: {
         title: '网页',
         i18nTitle: 'routes.front._value',
-        requiresAuth: true,
-        keepAlive: true,
-        singleLayout: 'basic',
         icon: 'fluent:book-information-24-regular',
         order: 10
       }
