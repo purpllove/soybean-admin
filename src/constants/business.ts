@@ -41,7 +41,9 @@ export const enableStatusOptions = transformObjectToOption(enableStatusRecord);
 
 export const menuTypeRecord: Record<ApiSystemManagement.MenuType, I18nType.I18nKey> = {
   '1': 'page.manage.menu.type.directory',
-  '2': 'page.manage.menu.type.menu'
+  '2': 'page.manage.menu.type.childMenu',
+  '3': 'page.manage.menu.type.menu',
+  '4': 'page.manage.menu.type.datailMenu'
 };
 
 export const menuTypeOptions = transformObjectToOption(menuTypeRecord);

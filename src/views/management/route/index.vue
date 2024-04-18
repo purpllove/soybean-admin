@@ -25,11 +25,13 @@
           :columns="columns"
           :data="tableData"
           :loading="loading"
+          :row-key="row => row.id"
+          remote
           :pagination="pagination"
           flex-height
           class="flex-1-hidden"
         />
-        <table-action-modal v-model:visible="visible" :type="modalType" :edit-data="editData" />
+        <table-action-modal v-model:visible="visible" :type="modalType" :edit-data="editingData" />
       </div>
     </n-card>
   </div>
@@ -93,9 +95,11 @@ const columns: Ref<DataTableColumns<ApiSystemManagement.Menu>> = ref([
     align: 'center',
     width: 80,
     render: row => {
-      const tagMap: Record<Api.Common.EnableStatus, NaiveUI.ThemeColor> = {
+      const tagMap: Record<ApiSystemManagement.MenuType, NaiveUI.ThemeColor> = {
         1: 'default',
-        2: 'primary'
+        2: 'primary',
+        3: 'primary',
+        4: 'primary'
       };
 
       const label = $t(menuTypeRecord[row.menuType]);
@@ -202,7 +206,7 @@ const columns: Ref<DataTableColumns<ApiSystemManagement.Menu>> = ref([
     width: 230,
     render: row => (
       <div class="flex-center justify-end gap-8px">
-        {row.menuType === '1' && (
+        {(row.menuType === '1' || row.menuType === '2') && (
           <NButton type="primary" ghost size="small" onClick={() => handleAddChildMenu(row)}>
             {$t('page.manage.menu.addChildMenu')}
           </NButton>

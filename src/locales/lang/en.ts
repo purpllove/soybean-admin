@@ -329,7 +329,9 @@ const locale: I18nType.Schema = {
         addChildMenu: 'Add Child Menu',
         type: {
           directory: 'Directory',
-          menu: 'Menu'
+          menu: 'Menu',
+          childMenu: 'Child Menu',
+          datailMenu: 'Detail Menu'
         },
         iconType: {
           iconify: 'Iconify Icon',

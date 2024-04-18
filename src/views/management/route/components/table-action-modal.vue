@@ -1,6 +1,6 @@
 <template>
   <n-modal v-model:show="modalVisible" preset="card" :title="title" class="w-700px">
-    <n-form ref="formRef" label-placement="left" :label-width="80" :model="formModel" :rules="rules">
+    <n-form ref="formRef" label-placement="left" :label-width="80" :model="formModel">
       <n-grid :cols="24" :x-gap="18">
         <n-form-item-grid-item :span="12" :label="$t('page.manage.menu.menuType')" path="menuType">
           <n-radio-group v-model:value="formModel.menuType">
@@ -46,7 +46,7 @@
           </n-radio-group>
         </n-form-item-grid-item>
         <n-form-item-grid-item :span="12" :label="$t('page.manage.menu.order')" path="order">
-          <n-input v-model:value="formModel.order" />
+          <n-input-number v-model:value="formModel.order" />
         </n-form-item-grid-item>
       </n-grid>
       <n-space class="w-full pt-16px" :size="24" justify="end">
@@ -61,8 +61,8 @@
 import { ref, computed, reactive, watch } from 'vue';
 import type { FormInst, FormItemRule } from 'naive-ui';
 import { enableStatusOptions, menuTypeOptions, menuIconTypeOptions } from '@/constants';
-import { addPage } from '@/service';
-import { formRules, createRequiredFormRule } from '@/utils';
+import { addMenu, updateMenu } from '@/service';
+// import { formRules, createRequiredFormRule } from '@/utils';
 import { $t } from '@/locales';
 
 export interface Props {
@@ -145,7 +145,7 @@ function createDefaultFormModel(): FormModel {
   return {
     // id: null,
     menuType: '1',
-    menuName: null,
+    menuName: '',
     icon: '',
     iconType: '1',
     routeName: '',
@@ -184,8 +184,13 @@ function handleUpdateFormModelByModalType() {
 
 async function handleSubmit() {
   // await formRef.value?.validate();
-  await addPage(formModel, props.type === 'add');
-  window.$message?.success('新增成功!');
+  if (props.type === 'add' || props.type === 'addChild') {
+    await addMenu(formModel);
+  }
+  if (props.type === 'edit') {
+    await updateMenu(formModel);
+  }
+  window.$message?.success(`${props.type}成功!`);
   closeModal();
 }
 

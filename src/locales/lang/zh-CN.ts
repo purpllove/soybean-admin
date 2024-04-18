@@ -14,7 +14,11 @@ const locale: I18nType.Schema = {
     confirm: '确认',
     cancel: '取消',
     pleaseCheckValue: '请检查输入的值是否合法',
-    action: '操作'
+    action: '操作',
+    yesOrNo: {
+      no: 'No',
+      yes: 'Yes'
+    }
   },
   routes: {
     dashboard: {
@@ -325,7 +329,9 @@ const locale: I18nType.Schema = {
         addChildMenu: '新增子菜单',
         type: {
           directory: '目录',
-          menu: '菜单'
+          menu: '菜单',
+          childMenu: '子目录',
+          datailMenu: '详情菜单'
         },
         iconType: {
           iconify: 'iconify图标',

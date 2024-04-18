@@ -45,56 +45,7 @@ interface Technology {
   icon: string;
   iconColor?: string;
 }
-const technology: Technology[] = [
-  {
-    id: 0,
-    name: 'Vue',
-    description: '一套用于构建用户界面的渐进式框架',
-    author: '尤雨溪 - Evan You',
-    site: 'https://v3.cn.vuejs.org/',
-    icon: 'logos:vue'
-  },
-  {
-    id: 1,
-    name: 'TypeScript',
-    description: 'JavaScript类型的超集，它可以编译成纯JavaScript',
-    author: '微软 - Microsoft',
-    site: 'https://www.typescriptlang.org/',
-    icon: 'logos:typescript-icon'
-  },
-  {
-    id: 2,
-    name: 'Vite',
-    description: '下一代前端开发与构建工具',
-    author: '尤雨溪 - Evan You',
-    site: 'https://vitejs.cn/',
-    icon: 'logos:vitejs'
-  },
-  {
-    id: 3,
-    name: 'NaiveUI',
-    description: '一个 Vue 3 组件库',
-    author: '图森未来 - TuSimple',
-    site: 'https://www.naiveui.com/zh-CN/os-theme',
-    icon: 'logos:naiveui'
-  },
-  {
-    id: 4,
-    name: 'UnoCSS',
-    description: '下一代实用优先的CSS框架',
-    author: 'Anthony Fu',
-    site: 'https://uno.antfu.me/?s=',
-    icon: 'logos:unocss'
-  },
-  {
-    id: 5,
-    name: 'Pinia',
-    description: 'vue状态管理框架，支持vue2、vue3',
-    author: 'Posva',
-    site: 'https://pinia.esm.dev/',
-    icon: 'noto:pineapple'
-  }
-];
+const technology: Technology[] = [];
 
 // interface SmallLogy {
 //   id: number;

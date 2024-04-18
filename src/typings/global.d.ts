@@ -52,13 +52,13 @@ declare namespace Common {
     /** record id */
     id: number;
     /** record creator */
-    createBy: string;
+    createBy?: string;
     /** record create time */
-    createTime: string;
+    createTime?: string;
     /** record updater */
-    updateBy: string;
+    updateBy?: string;
     /** record update time */
-    updateTime: string;
+    updateTime?: string;
     /** record status */
     status: EnableStatus | null;
   } & T;

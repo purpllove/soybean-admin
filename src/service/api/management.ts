@@ -63,3 +63,15 @@ export const fetchGetAllPages = async () => {
   const data = await request.get<string[] | null>('/systemManage/getAllPages');
   return data;
 };
+
+/** add menu */
+export const addMenu = async (menu: ApiSystemManagement.Menu | null) => {
+  const data = await request.post<ApiSystemManagement.Menu | null>('/addMenu', menu);
+  return data;
+};
+
+/** update route */
+export const updateMenu = async (menu: ApiSystemManagement.Menu | null) => {
+  const data = await request.post<ApiSystemManagement.Menu | null>('/updateMenu', menu);
+  return data;
+};

@@ -323,9 +323,9 @@ declare namespace I18nType {
       cancel: string;
       pleaseCheckValue: string;
       action: string;
-      YesOrNo: {
-        No: string;
-        Yes: string;
+      yesOrNo: {
+        no: string;
+        yes: string;
       };
     };
     routes: {
@@ -638,6 +638,8 @@ declare namespace I18nType {
           type: {
             directory: string;
             menu: string;
+            childMenu: string;
+            datailMenu: string;
           };
           iconType: {
             iconify: string;

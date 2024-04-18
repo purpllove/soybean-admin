@@ -14,7 +14,11 @@ const locale: I18nType.Schema = {
     confirm: 'យល់ព្រម',
     cancel: 'បោះបង់',
     pleaseCheckValue: 'សូមពិនិត្យមើលតម្លៃដែលបានបញ្ចូលដើម្បីបញ្ជាក់ថាត្រូវប្រើប្រាស់បាន',
-    action: 'សកម្មភាព'
+    action: 'សកម្មភាព',
+    yesOrNo: {
+      no: 'No',
+      yes: 'Yes'
+    }
   },
   routes: {
     dashboard: {
@@ -325,7 +329,9 @@ const locale: I18nType.Schema = {
         addChildMenu: 'Add Child Menu',
         type: {
           directory: 'Directory',
-          menu: 'Menu'
+          menu: 'Menu',
+          childMenu: 'Child Menu',
+          datailMenu: 'Detail Menu'
         },
         iconType: {
           iconify: 'Iconify Icon',

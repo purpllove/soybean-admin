@@ -77,7 +77,7 @@ declare namespace ApiSystemManagement {
    * - "1": directory
    * - "2": menu
    */
-  type MenuType = '1' | '2';
+  type MenuType = '1' | '2' | '3' | '4';
 
   type MenuButton = {
     /**
@@ -146,6 +146,7 @@ declare namespace ApiSystemManagement {
     buttons?: MenuButton[];
     /** children menu */
     children?: Menu[];
+    directory?: boolean;
   }>;
 
   /** menu list */

@@ -18,7 +18,7 @@ const front: AuthRoute.Route = {
     title: '网页',
     i18nTitle: 'routes.front._value',
     icon: 'clarity:plugin-line',
-    order:11
+    order: 11
   }
 };
 
