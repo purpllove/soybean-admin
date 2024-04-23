@@ -19,15 +19,15 @@ defineOptions({ name: 'FrontPageMainTechnologyCard' });
 
 interface Props {
   /** 技术名称 */
-  name: string;
+  name?: string;
   /** 技术描述 */
-  description: string;
+  description?: string;
   /** 技术作者 */
-  author: string;
+  author?: string;
   /** 技术官网 */
-  site: string;
+  site?: string;
   /** 技术图标 */
-  icon: string;
+  icon?: string;
   /** 图标颜色 */
   iconColor?: string;
 }

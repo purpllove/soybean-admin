@@ -61,12 +61,14 @@ declare namespace ApiChartManagement {
 
 declare namespace ApiPageManagement {
   interface Page {
-    id: number | null;
-    name: string | null;
-    description: string | null;
-    site: string | null;
-    icon: string | null;
-    iconColor?: string | null;
+    id: number;
+    name?: string;
+    description?: string;
+    site?: string;
+    icon?: string;
+    iconColor?: string;
+    type?: number;
+    orderBy?: number;
   }
 }
 

@@ -14,6 +14,12 @@
         <n-form-item-grid-item :span="12" label="图标" path="icon">
           <n-input v-model:value="formModel.icon" />
         </n-form-item-grid-item>
+        <n-form-item-grid-item :span="12" label="类型" path="type">
+          <n-input v-model:value="formModel.type" />
+        </n-form-item-grid-item>
+        <n-form-item-grid-item :span="12" label="排序" path="orderBy">
+          <n-input-number v-model:value="formModel.orderBy" />
+        </n-form-item-grid-item>
       </n-grid>
       <n-space class="w-full pt-16px" :size="24" justify="end">
         <n-button class="w-72px" round @click="closeModal">取消</n-button>
@@ -28,7 +34,7 @@ import { ref, computed, reactive, watch } from 'vue';
 import type { FormInst, FormItemRule } from 'naive-ui';
 import { genderOptions, userStatusOptions } from '@/constants';
 import { addPage } from '@/service';
-import { formRules, createRequiredFormRule } from '@/utils';
+// import { formRules, createRequiredFormRule } from '@/utils';
 
 export interface Props {
   /** 弹窗可见性 */
@@ -80,7 +86,7 @@ const title = computed(() => {
 
 const formRef = ref<HTMLElement & FormInst>();
 
-type FormModel = Pick<ApiPageManagement.Page, 'id' | 'name' | 'description' | 'site' | 'icon'>;
+type FormModel = Pick<ApiPageManagement.Page, 'id' | 'name' | 'description' | 'site' | 'icon' | 'type' | 'orderBy'>;
 
 const formModel = reactive<FormModel>(createDefaultFormModel());
 
@@ -98,7 +104,9 @@ function createDefaultFormModel(): FormModel {
     name: null,
     description: null,
     site: null,
-    icon: null
+    icon: null,
+    type: null,
+    orderBy: null
   };
 }
 

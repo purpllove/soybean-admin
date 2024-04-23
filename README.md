@@ -198,3 +198,11 @@ docker run -d -p 80:80 soybean-admin-image
 ## License
 
 本项目基于[MIT © Soybean-2021](./LICENSE) 协议，仅供参考学习，商用时请保留作者的版权信息，作者不对软件做担保和负责。
+
+## 2024-04-20
+
+centos后台启动
+
+```bash
+nohup pnpm dev > pnpm-dev.log 2>&1 &
+```

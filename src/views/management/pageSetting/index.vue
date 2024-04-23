@@ -29,6 +29,7 @@
           :columns="columns"
           :data="tableData"
           :loading="loading"
+          :row-key="row => row.id"
           :pagination="pagination"
           flex-height
           class="flex-1-hidden"
@@ -104,6 +105,16 @@ const columns: Ref<DataTableColumns<ApiPageManagement.Page>> = ref([
         </div>
       );
     }
+  },
+  {
+    key: 'type',
+    title: '类型',
+    align: 'center'
+  },
+  {
+    key: 'orderBy',
+    title: '排序',
+    align: 'center'
   },
   {
     key: 'actions',

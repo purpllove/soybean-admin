@@ -1,6 +1,6 @@
 <template>
   <n-grid :item-responsive="true" :x-gap="16" :y-gap="16">
-    <n-grid-item span="0:24 640:24 1024:24">
+    <!-- <n-grid-item span="0:24 640:24 1024:24">
       <n-space :vertical="true" :size="16">
         <n-card title="项目主要技术栈" :bordered="false" size="small" class="rounded-8px shadow-sm">
           <template #header-extra>
@@ -13,10 +13,28 @@
           </n-grid>
         </n-card>
       </n-space>
+    </n-grid-item> -->
+    <n-grid-item span="0:24 640:24 1024:24">
+      <n-space :vertical="true" :size="16">
+        <n-card title="Page" :bordered="false" size="small" class="rounded-8px shadow-sm">
+          <n-grid :item-responsive="true" responsive="screen" cols="m:1 l:6" :x-gap="8" :y-gap="8">
+            <n-grid-item v-for="item in smallLogy" :key="item.id">
+              <technology-card v-bind="item" />
+            </n-grid-item>
+          </n-grid>
+        </n-card>
+      </n-space>
     </n-grid-item>
     <n-grid-item span="0:24 640:24 1024:24">
       <n-space :vertical="true" :size="16">
-        <n-card title="" :bordered="false" size="small" class="rounded-8px shadow-sm">
+        <n-card
+          v-for="itemGroup in gourpLogy"
+          :key="itemGroup.id"
+          :title="itemGroup.id + ''"
+          :bordered="false"
+          size="small"
+          class="rounded-8px shadow-sm"
+        >
           <n-grid :item-responsive="true" responsive="screen" cols="m:1 l:6" :x-gap="8" :y-gap="8">
             <n-grid-item v-for="item in smallLogy" :key="item.id">
               <technology-card v-bind="item" />
@@ -37,15 +55,26 @@ import { ShortcutsCard, TechnologyCard } from './components';
 defineOptions({ name: 'FrontPageMain' });
 
 interface Technology {
-  id: number;
-  name: string;
-  description: string;
-  author: string;
-  site: string;
-  icon: string;
+  id?: number;
+  name?: string;
+  description?: string;
+  author?: string;
+  site?: string;
+  icon?: string;
   iconColor?: string;
 }
 const technology: Technology[] = [];
+const gourpLogy: Technology[] = [
+  {
+    id: 0
+  },
+  {
+    id: 1
+  },
+  {
+    id: 2
+  }
+];
 
 // interface SmallLogy {
 //   id: number;
