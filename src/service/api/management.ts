@@ -35,8 +35,8 @@ export const getRends = async () => {
 };
 
 /** getPages */
-export const getPages = async () => {
-  const data = await request.post<ApiPageManagement.Page[] | null>('/getPages');
+export const getPages = async (page: ApiPageManagement.Page | null) => {
+  const data = await request.post<ApiPageManagement.LegacyPage | null>('/getPages', page);
   return data;
 };
 
@@ -47,8 +47,8 @@ export const deletePage = (ids: number[] | null) => {
 };
 
 /** 新增修改网页 */
-export const addPage = async (user: ApiPageManagement.Page | null, update: boolean) => {
-  const data = await request.post<ApiPageManagement.Page[] | null>(update ? '/addPages' : '/updatePages', user);
+export const addPage = async (page: ApiPageManagement.Page | null, update: boolean) => {
+  const data = await request.post<ApiPageManagement.Page[] | null>(update ? '/addPages' : '/updatePages', page);
   return data;
 };
 

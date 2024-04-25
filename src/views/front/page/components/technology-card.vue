@@ -7,7 +7,16 @@
       <svg-icon :icon="icon" :style="{ color: iconColor }" class="text-30px" />
       <h3 class="pl-12px text-18px font-semibold">{{ name }}</h3>
     </header>
-    <p class="py-8px h-56px text-#999">{{ description }}</p>
+    <p v-if="description?.length < 16" class="py-6px h-20px text-#999">{{ description }}</p>
+    <div v-else class="py-6px h-20px text-#999" trigger="click">
+      <div class="flex-y-center">
+        <n-popover class="!p-0" trigger="click" placement="bottom">
+          <template #trigger>
+            <hover-container :tooltip-content="description" class="relative w-40px h-full">...</hover-container>
+          </template>
+        </n-popover>
+      </div>
+    </div>
     <!-- <div class="flex justify-end">
       <span>{{ author }}</span>
     </div> -->

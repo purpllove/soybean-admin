@@ -61,7 +61,7 @@ declare namespace ApiChartManagement {
 
 declare namespace ApiPageManagement {
   interface Page {
-    id: number;
+    id?: number;
     name?: string;
     description?: string;
     site?: string;
@@ -69,6 +69,11 @@ declare namespace ApiPageManagement {
     iconColor?: string;
     type?: number;
     orderBy?: number;
+  }
+
+  interface LegacyPage {
+    list: Page[];
+    types: number[];
   }
 }
 

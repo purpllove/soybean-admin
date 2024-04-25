@@ -5,7 +5,7 @@
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE) ![](https://img.shields.io/github/stars/honghuangdc/soybean-admin) ![](https://img.shields.io/github/forks/honghuangdc/soybean-admin)
 
-## 注意 SoybeanAdmin 正在重构，全新 1.0 即将发布
+## 注意 Purp Word 正在重构，全新 1.0 即将发布
 
 Soybean Admin v1.0 :
 
@@ -44,9 +44,9 @@ Soybean Admin v1.0 :
 - [@soybeanjs/changelog](https://github.com/soybeanjs/changelog): 根据 git tags 和 commits 生成 changelog [示例](./CHANGELOG.md)
 - [eslint-config-soybeanjs](https://github.com/soybeanjs/eslint-config): SoybeanJS 的 eslint 预设配置
 - [@soybeanjs/materials](https://github.com/soybeanjs/materials): SoybeanJS 的物料仓库
-- [@soybeanjs/vite-plugin-vue-page-route](https://github.com/soybeanjs/vite-plugin-vue-page-route): SoybeanAdmin 的路由插件
+- [@soybeanjs/vite-plugin-vue-page-route](https://github.com/soybeanjs/vite-plugin-vue-page-route): Purp Word 的路由插件
 
-## 基于 SoybeanAdmin 二次开发的项目
+## 基于 Purp Word 二次开发的项目
 
 - [electron-mock-admin](https://github.com/lixin59/electron-mock-api): 一个 Mock Api 管理系统，帮助前端开发伙伴快速实现接口的 mock。
 - [T-Shell](https://github.com/TheBlindM/T-Shell): 是一个可配置命令提示的终端模拟器和 SSH 客户端。
@@ -146,7 +146,7 @@ docker build -t soybean-admin-image -f docker/Dockerfile .
 docker run -d -p 80:80 soybean-admin-image
 ```
 
-- 访问 SoybeanAdmin
+- 访问 Purp Word
 
 打开本地浏览器访问`http://localhost`
 
@@ -205,4 +205,8 @@ centos后台启动
 
 ```bash
 nohup pnpm dev > pnpm-dev.log 2>&1 &
+```
+
+```git 提交报错 解决
+git commit -m '新增type' --no-verify
 ```

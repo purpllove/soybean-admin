@@ -66,7 +66,7 @@ async function getTableData() {
   const { data } = await getPages();
   if (data) {
     setTimeout(() => {
-      setTableData(data);
+      setTableData(data.list);
       endLoading();
     }, 1000);
   }
@@ -164,7 +164,7 @@ function handleEditTable(rowId: number | null) {
   openModal();
 }
 
-function handleDeleteTable(rowId: number | null) {
+function handleDeleteTable(rowId?: number | null) {
   deletePage([rowId]);
   window.$message?.info(`点击了删除，rowId为${rowId}`);
 }
