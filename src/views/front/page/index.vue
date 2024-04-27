@@ -4,8 +4,12 @@
     <!-- <n-grid-item v-for="itemGroup in gourpLogy" :key="itemGroup" span="0:24 640:24 1024:24"> -->
     <n-space v-for="itemGroup in gourpLogy" :key="itemGroup" :vertical="true" :size="16">
       <n-card :title="itemGroup + ''" :bordered="false" size="small" class="rounded-8px shadow-sm">
-        <n-grid :item-responsive="true" responsive="screen" cols="m:1 l:6" :x-gap="8" :y-gap="8">
-          <n-grid-item v-for="item in smallLogy" :key="item.id">
+        <n-grid :item-responsive="true" responsive="screen" cols="m:2 l:6" :x-gap="8" :y-gap="8">
+          <n-grid-item
+            v-for="item in smallLogy"
+            :key="item.id"
+            :style="{ display: item.type === itemGroup ? 'block' : 'none' }"
+          >
             <technology-card v-if="item.type === itemGroup" v-bind="item" />
           </n-grid-item>
         </n-grid>

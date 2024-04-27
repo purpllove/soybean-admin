@@ -1,5 +1,9 @@
 <template>
   <div class="overflow-hidden">
+    <n-card class="h-160px rounded-8px shadow-sm gap-16px">
+      <!-- <table-search-modal v-model:model="searchParams" class="pb-24px" @search="getTableData" /> -->
+      <TableSearchModal v-model:model="searchParams" class="pb-24px" @search="getTableData" />
+    </n-card>
     <n-card title="网页管理" :bordered="false" class="h-full rounded-8px shadow-sm">
       <div class="flex-col h-full">
         <n-space class="pb-12px" justify="space-between">
@@ -52,9 +56,20 @@ import SvgIcon from '@/components/custom/svg-icon.vue';
 import TableActionModal from './components/table-action-modal.vue';
 import type { ModalType } from './components/table-action-modal.vue';
 import ColumnSetting from './components/column-setting.vue';
+import TableSearchModal from './components/table-search-modal.vue';
 
 const { loading, startLoading, endLoading } = useLoading(false);
 const { bool: visible, setTrue: openModal } = useBoolean();
+
+// 对应子组件初始化值,必须先设定 不然会导致子组件初始化失败
+// const searchParams = ref<ApiPageManagement.PageSearchParams>({
+//   name: null,
+//   type: null
+// });
+const searchParams = ref<ApiPageManagement.Page>({
+  name: null,
+  type: null
+});
 
 const tableData = ref<ApiPageManagement.Page[]>([]);
 function setTableData(data: ApiPageManagement.Page[]) {
@@ -63,7 +78,7 @@ function setTableData(data: ApiPageManagement.Page[]) {
 
 async function getTableData() {
   startLoading();
-  const { data } = await getPages();
+  const { data } = await getPages(searchParams.value);
   if (data) {
     setTimeout(() => {
       setTableData(data.list);
@@ -184,7 +199,7 @@ const pagination: PaginationProps = reactive({
 });
 
 function init() {
-  getTableData();
+  getTableData(searchParams.value);
 }
 
 // 初始化

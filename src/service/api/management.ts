@@ -1,3 +1,4 @@
+import { ref } from 'vue';
 import { adapter } from '@/utils';
 // import { mockRequest } from '../request';
 import { request } from '../request';
@@ -36,6 +37,9 @@ export const getRends = async () => {
 
 /** getPages */
 export const getPages = async (page: ApiPageManagement.Page | null) => {
+  if (page === null) {
+    page = {};
+  }
   const data = await request.post<ApiPageManagement.LegacyPage | null>('/getPages', page);
   return data;
 };
