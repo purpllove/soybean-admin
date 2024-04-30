@@ -35,7 +35,7 @@ const themeColorList = [
 ];
 
 const defaultThemeSetting: Theme.Setting = {
-  darkMode: false,
+  darkMode: true,
   followSystemTheme: true,
   isCustomizeDarkModeTransition: false,
   layout: {
@@ -84,7 +84,7 @@ const defaultThemeSetting: Theme.Setting = {
     horizontalPositionList: themeHorizontalMenuPositionOptions
   },
   footer: {
-    visible: true,
+    visible: false,
     fixed: false,
     right: true,
     height: 48,

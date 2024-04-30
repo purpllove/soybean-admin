@@ -8,7 +8,7 @@
               <icon-ic-round-plus class="mr-4px text-20px" />
               新增
             </n-button>
-            <n-button type="error" round>
+            <n-button type="error" round @click="handleBatchDelete">
               <icon-ic-round-delete class="mr-4px text-20px" />
               批量删除
             </n-button>
@@ -132,7 +132,7 @@ const columns: Ref<DataTableColumns<ApiSystemManagement.Menu>> = ref([
 
       return (
         <div class="flex-center">
-          <SvgIcon icon={icon} localIcon={localIcon} class="text-icon" />
+          <svg-icon icon={icon} localIcon={localIcon} class="text-icon" />
         </div>
       );
     }
@@ -166,7 +166,7 @@ const columns: Ref<DataTableColumns<ApiSystemManagement.Menu>> = ref([
 
       const label = $t(enableStatusRecord[row.status]);
 
-      return <NTag type={tagMap[row.status]}>{label}</NTag>;
+      return <n-tag type={tagMap[row.status]}>{label}</n-tag>;
     }
   },
   {
@@ -203,7 +203,7 @@ const columns: Ref<DataTableColumns<ApiSystemManagement.Menu>> = ref([
     key: 'operate',
     title: $t('common.action'),
     align: 'center',
-    width: 230,
+    width: 280,
     render: row => (
       <div class="flex-center justify-end gap-8px">
         {(row.menuType === '1' || row.menuType === '2') && (
@@ -244,6 +244,7 @@ function handleAdd() {
 
 async function handleBatchDelete() {
   // request
+  console.log('ids');
   // onBatchDeleted();
 }
 

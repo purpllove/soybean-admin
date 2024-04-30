@@ -1,27 +1,25 @@
 <template>
-  <div class="overflow-hidden">
-    <n-card class="h-160px rounded-8px shadow-sm gap-16px">
-      <!-- <table-search-modal v-model:model="searchParams" class="pb-24px" @search="getTableData" /> -->
-      <TableSearchModal v-model:model="searchParams" class="pb-24px" @search="getTableData" />
-    </n-card>
-    <n-card title="网页管理" :bordered="false" class="h-full rounded-8px shadow-sm">
+  <div>
+    <!-- <n-card class="h-160px rounded-8px shadow-sm gap-16px"> -->
+    <!-- <table-search-modal v-model:model="searchParams" class="pb-24px" @search="getTableData" /> -->
+    <TableSearchModal v-model:model="searchParams" class="pb-24px" @search="getTableData" />
+    <!-- </n-card> -->
+    <n-card title="" :bordered="false" class="h-full rounded-8px shadow-sm">
       <div class="flex-col h-full">
-        <n-space class="pb-12px" justify="space-between">
-          <n-space>
-            <n-button type="primary" round @click="handleAddTable">
+        <n-space class="pb-12px" justify="end">
+          <n-space :size="18">
+            <n-button size="small" type="primary" round @click="handleAddTable">
               <icon-ic-round-plus class="mr-4px text-20px" />
               新增
             </n-button>
-            <n-button type="error" round>
+            <n-button size="small" type="error" round>
               <icon-ic-round-delete class="mr-4px text-20px" />
               删除
             </n-button>
-            <n-button type="success" round>
+            <n-button size="small" type="success" round>
               <icon-uil:export class="mr-4px text-20px" />
               导出Excel
             </n-button>
-          </n-space>
-          <n-space align="center" :size="18">
             <n-button size="small" type="primary" @click="getTableData">
               <icon-mdi-refresh class="mr-4px text-16px" :class="{ 'animate-spin': loading }" />
               刷新表格

@@ -7,7 +7,7 @@
       <svg-icon :icon="icon" :style="{ color: iconColor }" class="text-30px" />
       <h3 class="pl-12px text-18px font-semibold">{{ name }}</h3>
     </header>
-    <p v-if="description?.length < 16" class="py-6px h-20px text-#999">{{ description }}</p>
+    <p v-if="description && Number(description?.length) < 16" class="py-6px h-20px text-#999">{{ description }}</p>
     <div v-else class="py-6px h-20px text-#999" trigger="click">
       <div class="flex-y-center">
         <n-popover class="!p-0" trigger="click" placement="bottom">

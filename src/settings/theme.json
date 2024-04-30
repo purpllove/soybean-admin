@@ -1,5 +1,5 @@
 {
-  "darkMode": false,
+  "darkMode": true,
   "followSystemTheme": true,
   "isCustomizeDarkModeTransition": false,
   "layout": {
@@ -121,7 +121,7 @@
     ]
   },
   "footer": {
-    "visible": true,
+    "visible": false,
     "fixed": false,
     "right": true,
     "height": 48,

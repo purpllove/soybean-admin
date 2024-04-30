@@ -1,6 +1,6 @@
 <template>
   <dark-mode-container class="flex-center h-full" :inverted="theme.footer.inverted">
-    <span>Copyright ©2021 Soybean Admin</span>
+    <span>Purp World</span>
   </dark-mode-container>
 </template>
 

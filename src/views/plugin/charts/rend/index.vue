@@ -12,6 +12,7 @@ import type { Ref } from 'vue';
 // import { graphic } from 'echarts';
 import { getRends } from '@/service';
 import { type ECOption, useEcharts } from '@/composables';
+import { $t } from '@/locales';
 
 const lineDate = ref<ApiChartManagement.Rend[]>([]);
 
@@ -46,7 +47,20 @@ const lineOptions = ref<ECOption>({
   xAxis: {
     type: 'category',
     boundaryGap: false,
-    data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    data: [
+      $t('month.Jan'),
+      $t('month.Feb'),
+      $t('month.Mar'),
+      $t('month.Apr'),
+      $t('month.May'),
+      $t('month.Jun'),
+      $t('month.Jul'),
+      $t('month.Aug'),
+      $t('month.Sep'),
+      $t('month.Oct'),
+      $t('month.Nov'),
+      $t('month.Dec')
+    ]
   },
   yAxis: {
     type: 'value'
@@ -120,7 +134,7 @@ function setLineData(data: ApiChartManagement.Rend[]) {
   lineDate.value = data;
   const seriesOption = lineOptions.value.series;
   data.forEach(item => {
-    seriesOption.forEach(itm => {
+    seriesOption?.forEach(itm => {
       if (item.name === itm.name) {
         itm.data = item.list;
       }

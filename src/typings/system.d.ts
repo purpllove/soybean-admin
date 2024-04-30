@@ -648,6 +648,20 @@ declare namespace I18nType {
         };
       };
     };
+    month: {
+      Jan: string;
+      Feb: string;
+      Mar: string;
+      Apr: string;
+      May: string;
+      Jun: string;
+      Jul: string;
+      Aug: string;
+      Sep: string;
+      Oct: string;
+      Nov: string;
+      Dec: string;
+    };
   };
 
   type GetI18nKey<T extends Record<string, unknown>, K extends keyof T = keyof T> = K extends string

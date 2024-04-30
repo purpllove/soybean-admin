@@ -1,6 +1,6 @@
 <template>
   <n-modal v-model:show="modalVisible" preset="card" :title="title" class="w-700px">
-    <n-form ref="formRef" label-placement="left" :label-width="80" :model="formModel" :rules="rules">
+    <n-form ref="formRef" label-placement="left" :label-width="80" :model="formModel">
       <n-grid :cols="24" :x-gap="18">
         <n-form-item-grid-item :span="12" label="名称" path="name">
           <n-input v-model:value="formModel.name" />
@@ -15,7 +15,7 @@
           <n-input v-model:value="formModel.icon" />
         </n-form-item-grid-item>
         <n-form-item-grid-item :span="12" label="类型" path="type">
-          <n-input v-model:value="formModel.type" />
+          <n-input-number v-model:value="formModel.type" />
         </n-form-item-grid-item>
         <n-form-item-grid-item :span="12" label="排序" path="orderBy">
           <n-input-number v-model:value="formModel.orderBy" />
@@ -132,8 +132,9 @@ function handleUpdateFormModelByModalType() {
 
 async function handleSubmit() {
   // await formRef.value?.validate();
-  await addPage(formModel, props.type === 'add');
-  window.$message?.success('新增成功!');
+  const isAdd = props.type === 'add';
+  await addPage(formModel, isAdd);
+  window.$message?.success(isAdd ? '新增成功!' : '修改成功!');
   closeModal();
 }
 

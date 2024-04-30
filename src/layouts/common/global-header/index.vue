@@ -13,6 +13,7 @@
       <theme-mode />
       <toggle-lang />
       <system-message />
+      <!-- <setting-drawer /> -->
       <setting-button v-if="showButton" />
       <user-avatar />
     </div>
@@ -24,6 +25,8 @@ import { useThemeStore } from '@/store';
 import { useBasicLayout } from '@/composables';
 import GlobalLogo from '../global-logo/index.vue';
 import GlobalSearch from '../global-search/index.vue';
+// import SettingDrawer from '../setting-drawer/index.vue';
+// import { SettingDrawer } from '../../common';
 import {
   FullScreen,
   GithubSite,
